@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Fitness Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      background-color: black;
+    }
+
+    .video-container, .video-container2 {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .video-container video, .video-container2 video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      filter: brightness(100%);
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+
+    .centered-text, .centered-text2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .button1, .button2, .button3, .but, .but2 {
+      background: blue;
+      color: white;
+      padding: 12px 50px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .form-control {
+      max-width: 300px;
+      margin: 10px auto;
+    }
+
+    .imga, .img2 {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .imga img, .img2 img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      filter: brightness(80%);
+    }
+
+    .center1, .center2 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+
+    .center1 p {
+      font-size: 4rem;
+      color: white;
+    }
+
+    .footer {
+      background-color: grey;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .img2 img {
+      width: 100%;
+      height: 50%;
+    }
+    .video-container3 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.video-container3 img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+.centered-text3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">HOME</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">HELP</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Logs</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">PS Gym Log</a></li>
+              <li><a class="dropdown-item" href="#">Diet Log</a></li>
+              <li><a class="dropdown-item" href="#">Progress Tracker</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-white mt-4">
+    <div id="exerciseResults"></div>
+  </div>
+
+  <div class="container text-white mt-4">
+    <div id="result" class="result  text-dark p-3 rounded mb-3"></div>
+  </div>
+
+  <!-- Strength Training Section -->
+  <div class="video-container">
+    <video src="images\prasad1.mp4" autoplay muted loop></video>
+    <div class="overlay"></div>
+    <div class="centered-text text-center text-white">
+      <h1 class="display-4 fw-bold">Strength Training</h1>
+      <p class="lead">Push your limits. Track your progress. Own your journey.</p>
+      <input type="text" id="muscleInputStrength" class="form-control mt-3" placeholder="Enter muscle (e.g. chest, biceps, glutes)">
+      <button id="strengthBtn" class="btn btn-primary mt-3">Get Started</button>
+    </div>
+  </div>
+
+  <!-- Fat Loss Section -->
+  <div class="video-container2">
+    <video src="images\sai1.mp4" autoplay muted loop></video>
+    <div class="overlay2"></div>
+    <div class="centered-text2">
+      <h1 class="display-4 fw-bold">Fat Loss</h1>
+      <p class="lead">You’re not just changing your body—you’re rewriting your story</p>
+      <input type="text" id="activityInput" class="form-control mt-3" placeholder="Enter activity (e.g. running)">
+      <a href="#" id="fatLossBtn" class="button2">GET STARTED</a>
+    </div>
+  </div>
+
+  <!-- Fitness Tracking Section -->
+  <div class="imga">
+    <img src="images/pexels-willpicturethis-1954524.jpg" alt="fitness tracking">
+    <div class="center1 text-white">
+      <p class="display-4 fw-bold">FITNESS TRACKING</p>
+      <form id="calorie-form" class="mt-3">
+        <input type="number" id="weight" placeholder="Weight (kg)" required class="form-control mb-2">
+        <input type="number" id="height" placeholder="Height (cm)" required class="form-control mb-2">
+        <input type="number" id="age" placeholder="Age" required class="form-control mb-2">
+        <select id="sex" class="form-control mb-2">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <select id="activity-level" class="form-control mb-3">
+          <option value="sedentary">Sedentary</option>
+          <option value="lightlyActive">Lightly Active</option>
+          <option value="moderatelyActive">Moderately Active</option>
+          <option value="veryActive">Very Active</option>
+          <option value="extremelyActive">Extremely Active</option>
+        </select>
+        <button type="submit" class="btn btn-success">Calculate Calories</button>
+      </form>
+    </div>
+  </div>
+
+<!-- Workout Plans Section -->
+<div class="video-container3">
+  <img src="images\WhatsApp Image 2025-10-15 at 15.12.40_d49dc250.jpg" alt="Workout Plans">
+  <div class="centered-text3">
+    <h1 class="display-4 fw-bold">WORKOUT PLANS</h1>
+    <p class="lead">Train smart. Target your goals. Build your body.</p>
+    <input type="text" id="muscleInputWorkout" placeholder="Enter muscle (e.g. biceps)" class="form-control mt-3">
+    <button id="workoutBtn" class="btn btn-info mt-3">Generate Workout Plan</button>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="contact">
+      <p>Contact us</p>
+      <a href="#">fitnesstracking@gamil.com</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

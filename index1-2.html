@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ps</title>
+    <link rel="stylesheet"href="style.css">
+</head>
+<body>
+
+   
+     <h1 id="ah1">FITTNESS TRACKING AND TRAING</h1>
+<form id="form">
+  <label for="name">Username</label>
+  <input id="name" type="text" name="name" placeholder="Enter your name" required><br>
+
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password" placeholder="Enter your password" required><br>
+
+  <button type="submit">Submit</button>
+</form>
+<script>
+  document.getElementById("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop form from trying to load post.html
+
+    const username = document.getElementById("name").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!username || !password) {
+      alert("Please enter both username and password.");
+      return;
+    }
+
+    // ✅ Save user data locally
+    localStorage.setItem("userData", JSON.stringify({ username, password }));
+    localStorage.setItem("loggedInUser", username);
+
+    // ✅ Redirect to homepage
+    window.location.href = "post.html"; // Make sure this file exists
+  });
+</script>
+  </body>
+  </html>
